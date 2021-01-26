@@ -14,7 +14,7 @@
 		비밀번호: <input type="password" name="password">
 		
 		<c:if test="${requestScope.result eq 0 }">
-			<p>비밀번호를  입력해주세요</p>
+			<p>비밀번호를 다시 입력해주세요</p>
 		</c:if>
 		
 		<button type="submit">확인</button>

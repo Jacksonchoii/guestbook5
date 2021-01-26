@@ -21,7 +21,7 @@
 					name,
 					password,
 					content,
-					to_char(reg_date, 'yyyy-mm-dd hh24:mi:ss') regDate
+					to_char(reg_date, 'yyyy-mm-dd hh24:mi:ss') reg_date
 			from guestbook
 		]]>
 	</select>
@@ -43,6 +43,7 @@
 		<![CDATA[
 			delete from guestbook
 			where no = #{no}
+			and password = #{password}
 		]]>
 	</delete>
 
