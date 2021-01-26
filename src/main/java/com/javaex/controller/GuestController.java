@@ -67,7 +67,7 @@ public class GuestController {
 	//삭제
 	
 	@RequestMapping(value = "/delete", method = {RequestMethod.GET, RequestMethod.POST})
-	public String delete(@ModelAttribute GuestVo guestVo, Model model) { /* no와 password */
+	public String delete(@ModelAttribute GuestVo guestVo) { /* no와 password */
 		System.out.println("delete");
 		
 		
@@ -77,8 +77,8 @@ public class GuestController {
 			return "redirect:/gbc/addList";
 		} else { // 삭제 실패
 			
-			model.addAttribute("result", count);
-			return "deleteForm";
+			//리다이렉트 시켜주기
+			return "redirect:/gbc/deleteForm?count=0&no=" + guestVo.getNo();
 		}
 		
 		
